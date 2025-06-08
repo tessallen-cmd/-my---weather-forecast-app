@@ -4,56 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,
 wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1
 ,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lobster&family=PT+Mono&family=
 Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital
-,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="src/style.css" />
     <title>Forecast app</title>
   </head>
   <body>
     <div class="weather-app">
-    <header>
-      <form>
-        <input type="search" placeholder="Enter a city.." required />
-        <input type="submit" value="Search " />
-      </form>
-    </header>
-    <main>
-      <div>
-        <h1>Paris</h1>
-        <p>
-          Tuesday 14.49, scattered clouds
-          <br />
-          Humidity: 66%, Wind: 3.13km/h
-        </p>
-      </div>
-      <div>🌤️ 12℃</div>
-    </main>
+      <header>
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
+        </form>
+      </header>
+      <main>
+        <div>
+          <h1>Paris</h1>
+          <p>
+            Tuesday 14.49, scattered clouds
+            <br />
+            Humidity: 66%, Wind: 3.13km/h
+          </p>
+        </div>
+        <div>🌤️ 12℃</div>
+      </main>
 
-    <footer>
-      This project was coded by
-      <a href="https://github.com/minervashia" target="_blank"> Tess Allen </a>
-      hosted
-      <a
-        href="https://github.com/minervashia/weather--forecast-app"
-        target="_blank"
-        >open-sourced on GitHub</a
-      >
+      <footer>
+        This project was coded by
+        <a href="https://github.com/minervashia" target="_blank">
+          Tess Allen
+        </a>
+        hosted
+        <a
+          href="https://github.com/minervashia/weather--forecast-app"
+          target="_blank"
+          >open-sourced on GitHub</a
+        >
 
-      and website hosted
+        and website hosted
 
-      <a href="https://forecastweathernow.netlify.app/" target="_blank"
-        >on Netlify</a
-      >
-    </footer>
-</div>
+        <a href="https://forecastweathernow.netlify.app/" target="_blank"
+          >on Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>
