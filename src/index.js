@@ -10,6 +10,7 @@ function refreshWeather(response) {
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
 
+ 
   icon.innerHTML = `<img src="${response.data.condition.icon_url}" class= weather-app-icon" />`;
 
   cityElement.innerHTML = response.data.city;
@@ -18,6 +19,9 @@ function refreshWeather(response) {
   humidityElement.innerHTML = ` ${response.data.temperature.humidity}%`;
   windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
+
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -45,7 +49,7 @@ function formatDate(date) {
 function searchCity(city) {
   // goal is to make api call and update UI user interface
   let apiKey = "9117d16f27ad34748062df20bto34069";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&unit=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(refreshWeather);
   //seperation of concern  means it will only do a job that is assigned
   //ask axios to update data for new city
@@ -61,7 +65,18 @@ function handleSearchSubmit(event) {
   //search for the city
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "9117d16f27ad34748062df20bto34069";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+
+  
+}
+
+function displayForecast(response){
+  console.log(response.data);
+}
+
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -85,11 +100,12 @@ function displayForecast() {
   });
 
   forecastElement.innerHTML = forecastHtml;
-}
+
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Paris");
+
 //default when loading page city name and temperature now not hard coded into the html
 displayForecast();
